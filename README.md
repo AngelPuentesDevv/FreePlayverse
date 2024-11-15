@@ -21,10 +21,10 @@ FreePlayverse es una aplicación Java que muestra datos de videojuegos gratuitos
         3. Construye el proyecto: `mvn clean install` (o el comando correspondiente si usas otra herramienta)
         4. Ejecuta la aplicación: `java -jar target/FreePlayverse.jar`
 
-        **Contribuciones:**
+**Contribuciones:**
 Las contribuciones son bienvenidas. Por favor, abre un issue o envía un pull request para discutir cualquier cambio importante.
 
-        ## Créditos
+## Créditos
 
 Este proyecto utiliza datos proporcionados por la API pública de FreeToGame. Agradecemos a los creadores de la API por su trabajo y por hacerla disponible para el público.
 
