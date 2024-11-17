@@ -3,7 +3,6 @@ package com.angelpuentesdevv.freeplayverse.modelos;
 public class Videojuego {
 
 //Atributos que representan las caracterísiticas del videojuego
-
     private String titulo;
     private String descripcion;
     private String genero;
@@ -13,7 +12,6 @@ public class Videojuego {
     private int fechaLanzamiento;
 
 //Creación del constructor de la clase Videojuego
-
     public Videojuego(String titulo, String descripcion, String genero, String plataforma, String publicador,
                       String desarrollador, int fechaLanzamiento) {
         this.titulo = titulo;
@@ -26,7 +24,6 @@ public class Videojuego {
     }
 
 //Métodos get para cada uno de los atributos
-
     public String getTitulo() {
         return titulo;
     }
@@ -55,15 +52,44 @@ public class Videojuego {
         return fechaLanzamiento;
     }
 
+    public void setTitulo(String titulo) {
+        this.titulo = titulo;
+    }
+
+    public void setDescripcion(String descripcion) {
+        this.descripcion = descripcion;
+    }
+
+    public void setGenero(String genero) {
+        this.genero = genero;
+    }
+
+    public void setPlataforma(String plataforma) {
+        this.plataforma = plataforma;
+    }
+
+    public void setPublicador(String publicador) {
+        this.publicador = publicador;
+    }
+
+    public void setDesarrollador(String desarrollador) {
+        this.desarrollador = desarrollador;
+    }
+
+    public void setFechaLanzamiento(int fechaLanzamiento) {
+        this.fechaLanzamiento = fechaLanzamiento;
+    }
+
+    //Sobreescritura del método toString para la clase Videojuego
     @Override
     public String toString() {
-        return "(titulo= " + titulo +
-                ", descripcion= " + descripcion +
-                ", genero= " + genero +
-                ", plataforma= " + plataforma +
-                ", publicador= " + publicador +
-                ", desarrollador= " + desarrollador +
-                ", fecha de lanzamiento= " + fechaLanzamiento +
+        return "(titulo=" + titulo +
+                ", descripcion=" + descripcion +
+                ", genero=" + genero +
+                ", plataforma=" + plataforma +
+                ", publicador=" + publicador +
+                ", desarrollador=" + desarrollador +
+                ", fecha de lanzamiento=" + fechaLanzamiento +
                 ")";
     }
 }
