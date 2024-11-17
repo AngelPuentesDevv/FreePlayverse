@@ -1,4 +1,4 @@
-package com.angelpuentesdevv.freeplayverse.endpoints;
+package com.angelpuentesdevv.freeplayverse.rutas;
 
 import com.angelpuentesdevv.freeplayverse.modelos.Videojuego;
 import com.google.gson.Gson;
@@ -11,7 +11,7 @@ import java.net.http.HttpRequest;
 import java.net.http.HttpResponse;
 import java.util.List;
 
-public class VideojuegoEndpoint {
+public class VideojuegoRutas {
 
     //Declaración de variables importantes
     private static final String URL_BASE = "https://www.freetogame.com/api";
@@ -19,7 +19,7 @@ public class VideojuegoEndpoint {
     private final Gson gson;
 
     //Constructor de la clase
-    public VideojuegoEndpoint(){
+    public VideojuegoRutas(){
         this.client = HttpClient.newHttpClient();
         this.gson = new GsonBuilder()
                 .setPrettyPrinting()
@@ -34,6 +34,5 @@ public class VideojuegoEndpoint {
         String json = response.body();
         return gson.fromJson(json, List.class);
     }
-
 
 }
