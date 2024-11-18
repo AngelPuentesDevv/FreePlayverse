@@ -17,7 +17,7 @@ public class VideojuegoConsulta {
 
         //Uso de ciclo while para ejecutar el programa hasta que se decida lo contrario
         boolean continuar = true;
-        while(true) {
+        while(continuar) {
             //Mostrar el menú al usuario
             System.out.println("""
                     !Bienvenido a FreePlayverse! 
@@ -60,7 +60,7 @@ public class VideojuegoConsulta {
                     System.out.println(gson.toJson(api.obtenerJuegosOrdenados(ordenarPor)));
                     break;
                 case 9:
-
+                    continuar = false;
                     break;
                 default:
                     System.out.println("Opción invalida. Intente nuevamente.");
