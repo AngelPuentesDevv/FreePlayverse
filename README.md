@@ -6,12 +6,10 @@ FreePlayverse es una aplicación Java que muestra datos de videojuegos gratuitos
 - Consumo de API de videojuegos gratuitos
 - Visualización de datos de videojuegos
 - Arquitectura modular y limpia
-- Integración con Azure 
 - Documentación completa
 
 **Tecnologías utilizadas:**
 - Java
-- Azure PostgreSQL servidor flexible
 - Frameworks y bibliotecas relevantes (Gson)
 - Herramientas de construcción y gestión de dependencias (Maven)
 - Herramientas de prueba (Postman)
