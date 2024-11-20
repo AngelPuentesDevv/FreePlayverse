@@ -1,6 +1,7 @@
 package com.angelpuentesdevv.freeplayverse.principal;
 
 import com.angelpuentesdevv.freeplayverse.modelos.FreeToGameAPI;
+import com.angelpuentesdevv.freeplayverse.modelos.GeneradorDeArchivo;
 import com.google.gson.Gson;
 import com.google.gson.GsonBuilder;
 
@@ -14,6 +15,7 @@ public class VideojuegoConsulta {
         Scanner lectura = new Scanner(System.in);
         FreeToGameAPI api = new FreeToGameAPI();
         Gson gson = new GsonBuilder().setPrettyPrinting().create();
+        GeneradorDeArchivo generadorDeArchivo = new GeneradorDeArchivo();
 
         //Uso de ciclo while para ejecutar el programa hasta que se decida lo contrario
         boolean continuar = true;
@@ -34,30 +36,40 @@ public class VideojuegoConsulta {
 
             switch (opcion) {
                 case 1:
-                    System.out.println(gson.toJson(api.obtenerTodosLosJuegos()));
+                    String todosLosJuegos = api.obtenerTodosLosJuegos();
+                    System.out.println(gson.toJson(todosLosJuegos));
+                    generadorDeArchivo.guardarJson(todosLosJuegos);
                     break;
                 case 2:
                     System.out.println("Ingrese el ID del videojuego: ");
                     int id = lectura.nextInt();
-                    System.out.println(gson.toJson(api.obtenerJuegosPorId(id)));
+                    String juegoPorId = api.obtenerJuegosPorId(id);
+                    System.out.println(gson.toJson(juegoPorId));
+                    generadorDeArchivo.guardarJson(juegoPorId);
                     break;
                 case 3:
+                    System.out.println("Las categorías disponibles son: " + api.getCategorias());
                     System.out.println("Ingrese la categoría: ");
                     String categoria = lectura.nextLine();
-                    System.out.println(gson.toJson(api.obtenerJuegosPorCategoria(categoria)));
+                    String juegosPorCategoria = api.obtenerJuegosPorCategoria(categoria);
+                    System.out.println(gson.toJson(juegosPorCategoria));
+                    generadorDeArchivo.guardarJson(juegosPorCategoria);
                     break;
                 case 4:
+                    System.out.println("Las plataformas disponibles son: " + api.getPlataforma());
                     System.out.println("Ingrese la plataforma: ");
                     String plataforma = lectura.nextLine();
-                    System.out.println(gson.toJson(api.obtenerJuegosPorPlataforma(plataforma)));
+                    String juegosPorPlataforma = api.obtenerJuegosPorPlataforma(plataforma);
+                    System.out.println(gson.toJson(juegosPorPlataforma));
+                    generadorDeArchivo.guardarJson(juegosPorPlataforma);
                     break;
                 case 5:
-                    System.out.println("""
-                            Ingrese el criterio de ordenación
-                            (release-date, alphabetical, relevance):
-                            """);
+                    System.out.println("Los criterios de or");
+                    System.out.println("Ingrese el criterio de ordenacion: " + api.getCriterioDeOrdenacion());
                     String ordenarPor = lectura.nextLine();
-                    System.out.println(gson.toJson(api.obtenerJuegosOrdenados(ordenarPor)));
+                    String juegosOrdenados = api.obtenerJuegosOrdenados(ordenarPor);
+                    System.out.println(gson.toJson(juegosOrdenados));
+                    generadorDeArchivo.guardarJson(juegosOrdenados);
                     break;
                 case 9:
                     continuar = false;
